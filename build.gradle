@@ -16,9 +16,14 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot' 
 
 jar {
-    baseName = 'wybistestbed'
-    version = '0.0.1-SNAPSHOT'
+    baseName = 'wybis-tesbed'
+    version = '1.0.0'
 }
+
+springBoot {
+    mainClass = "io.wybis.wybistestbed.Application"
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -29,12 +34,24 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-aop')
-    compile('org.springframework.boot:spring-boot-devtools')
-    compile('org.springframework.boot:spring-boot-starter-integration')
     compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('org.springframework.boot:spring-boot-starter-integration')
+
+    compile('com.fasterxml.jackson.core:jackson-core')
+    compile('com.fasterxml.jackson.core:jackson-databind')
+    compile('com.fasterxml.jackson.core:jackson-annotations')
+
     compile('org.codehaus.groovy:groovy')
-    runtime('com.h2database:h2')
-    testCompile('org.springframework.boot:spring-boot-starter-test') 
+    compile('org.codehaus.groovy:groovy-sql')
+
+    compile('joda-time:joda-time')
+
+    compile('com.h2database:h2')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    testCompile('org.spockframework:spock-core')
+    testCompile('org.spockframework:spock-spring')
 }
 
 

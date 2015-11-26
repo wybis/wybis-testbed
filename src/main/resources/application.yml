@@ -1,0 +1,11 @@
+service-id : default
+
+spring :
+  application :
+    name : Wybis Testbed
+
+  datasource :
+    url : jdbc:h2:mem:testbed
+    username : sa
+    password :
+    driverClassName : org.h2.Driver
